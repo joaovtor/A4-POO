@@ -5,3 +5,5 @@
 João Vitor Madrid Beck
 
 Fabiano Pacheco Monteiro
+
+João Guilherme Heinrichs da Silveira
