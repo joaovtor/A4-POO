@@ -7,7 +7,7 @@ using namespace std;
 class Quarto
 {
 public:
-	Quarto(string t, int nc, string tc);
+	Quarto(string t, int nc, string tc, int e);
 
 	string getTipo();
 	int getNCamas();
@@ -18,6 +18,7 @@ public:
 	void setNCamas(int nc);
 	void setTCamas(string tc);
 
+	int getEstadia();
 
 
 private:
@@ -26,6 +27,7 @@ private:
 	int nCamas;
 	string tCamas;
 	int nQuarto;
+	int estadia;
 
 	int static novoID;
 	int GeraID();

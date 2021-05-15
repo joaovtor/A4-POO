@@ -15,21 +15,33 @@ string Funcionario::getNome()
 	return string();
 }
 
-void Funcionario::Verifica()
+
+void Funcionario::alteraDados(string nome)
 {
+	int cont=0;
+	for (int i = 0; i < ClientesCadastrados.size(); i++)
+	{
+		if (ClientesCadastrados[i].getNome() == nome) {
+			ClientesCadastrados[i].setNome(nome);
+			cont++;
+		}
+	}
+	if (cont==0)
+	{
+		cout << "\nERRO\nCliente nao encontrado";
+	}
+	else {
+		cout << "\nNome alterado com sucesso\n";
+	}
 }
 
-void Funcionario::alteraDados()
-{
-}
-
-void Funcionario::reservarQuarto(string n, string t, int nc, string tc)
+void Funcionario::reservarQuarto(string n, string t, int nc, string tc, int e)
 {
 	int c=0;
 	for (int i = 0; i < ClientesCadastrados.size(); i++)
 	{
 		if (ClientesCadastrados[i].getNome() == n) {
-			ClientesCadastrados[i].ReservarQuarto(t, nc, tc);
+			ClientesCadastrados[i].ReservarQuarto(t, nc, tc, e);
 			c++;
 			cout << "\nReserva realizada com sucesso\n";
 		}
@@ -61,5 +73,14 @@ void Funcionario::reservas()
 	for (int i = 0; i < ClientesCadastrados.size(); i++)
 	{
 		ClientesCadastrados[i].NumeroReservas();
+	}
+
+}
+
+void Funcionario::Disponibilidade(int id)
+{
+	for (int i = 0; i < ClientesCadastrados.size(); i++)
+	{
+		ClientesCadastrados[i].VerificaQuarto(id);
 	}
 }

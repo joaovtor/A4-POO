@@ -14,15 +14,13 @@ public:
 	void setNome(string n);
 	string getNome();
 
-	void Verifica();
-	void alteraDados();
-	void reservarQuarto(string n, string t, int nc, string tc);
-	
+	void alteraDados(string nome);
+	void reservarQuarto(string n, string t, int nc, string tc, int e);
+
 	void Dados();
-
 	void addCliente(string n, int i);
-
 	void reservas();
+	void Disponibilidade(int id);
 
 private:
 	string nome;
