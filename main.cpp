@@ -6,7 +6,7 @@ int main() {
 	
 	Funcionario Func1("Jorginho");
 
-	string nome, tipo, tcama;
+	string nome, tipo, tcama, n;
 	
 	int op=0, cama=0, i=0, id=0, e=0;
 	while (op!=5)
@@ -55,8 +55,10 @@ int main() {
 			case 2:
 				cout << "\nDigite o nome do cliente que deseja alterar: ";
 				cin >> nome;
+				cout << "\nDigite o novo nome do cliente: ";
+				cin >> n;
 
-				Func1.alteraDados(nome);
+				Func1.alteraDados(nome, n);
 
 			default:
 				cout << "Opcao invalida";

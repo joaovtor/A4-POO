@@ -16,13 +16,13 @@ string Funcionario::getNome()
 }
 
 
-void Funcionario::alteraDados(string nome)
+void Funcionario::alteraDados(string nome, string n)
 {
 	int cont=0;
 	for (int i = 0; i < ClientesCadastrados.size(); i++)
 	{
 		if (ClientesCadastrados[i].getNome() == nome) {
-			ClientesCadastrados[i].setNome(nome);
+			ClientesCadastrados[i].setNome(n);
 			cont++;
 		}
 	}

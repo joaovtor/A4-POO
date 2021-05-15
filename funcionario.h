@@ -14,7 +14,7 @@ public:
 	void setNome(string n);
 	string getNome();
 
-	void alteraDados(string nome);
+	void alteraDados(string nome, string n);
 	void reservarQuarto(string n, string t, int nc, string tc, int e);
 
 	void Dados();
