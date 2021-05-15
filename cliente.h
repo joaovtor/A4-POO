@@ -19,10 +19,10 @@ public:
     int getIdade();
 
     void ImprimeDados();
-
-    void ReservarQuarto(string t, int nc, string tc);
-
+    void ReservarQuarto(string t, int nc, string tc, int e);
     void NumeroReservas();
+    void VerificaQuarto(int id);
+    
 
 private:
 

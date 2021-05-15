@@ -5,23 +5,16 @@
 int main() {
 	
 	Funcionario Func1("Jorginho");
-	/*
-	Func1.addCliente("Marcelinho", 12);
-	Func1.addCliente("xuxu", 69);
 
-	Func1.reservarQuarto("Marcelinho", "luxo", 1, "casal");
-	Func1.reservarQuarto("Marcelinho", "simples", 3, "solteiro");
-
-	Func1.reservarQuarto("xuxu", "luxo", 5, "casal");
-
-	/*Func1.Dados();
-	Func1.reservas();*/
 	string nome, tipo, tcama;
 	
-	int op=0, cama=0, i=0;
-	while (op!=4)
+	int op=0, cama=0, i=0, id=0, e=0;
+	while (op!=5)
 	{
-		cout << "\n\nMENU\n1-Reservar quarto\n2-Cadastrar usuario\n3-Registros\n4-Sair\nOpcao: ";
+		cout << "\n\nMENU\n1-Reservar quarto\n"<<
+			"2-Cadastrar ou alterar dados de usuario\n"<<
+			"3-Registros\n"<<
+			"4-Verificar disponibilidade\n5-Sair\nOpcao: ";
 		cin >> op;
 
 		switch (op)
@@ -37,18 +30,39 @@ int main() {
 			cin >> cama;
 			cout << "\nDigite o tipo das camas (Solteiro ou casal): ";
 			cin >> tcama;
+			cout << "Digite quanto tempo o cliente deseja reservar (dias): ";
+			cin >> e;
 			
-			Func1.reservarQuarto(nome, tipo, cama, tcama);
+			Func1.reservarQuarto(nome, tipo, cama, tcama, e);
 
-			
 			break;
 		case 2:
-			cout << "\nOPCAO 2\n\nDigite o Nome e idade do cliente:";
-			cin >> nome;
-			cin >> i;
+			cout << "\nOPCAO2\n1-Criar um registro\n2-Alterar um existente\n";
+			cin >> op;
+			
+			switch (op)
+			{
 
-			Func1.addCliente(nome, i);
-			cout << "\nUsuario cadastrado com sucesso\n";
+			case 1:
+				cout << "\nDigite o Nome do cliente: ";
+				cin >> nome;
+				cout << "Digite a idade do cliente: ";
+				cin >> i;
+
+				Func1.addCliente(nome, i);
+				cout << "\nUsuario cadastrado com sucesso\n";
+				break;
+			case 2:
+				cout << "\nDigite o nome do cliente que deseja alterar: ";
+				cin >> nome;
+
+				Func1.alteraDados(nome);
+
+			default:
+				cout << "Opcao invalida";
+				break;
+			}
+			
 			break;
 		case 3:
 			cout << "Que tipo de registro deseja acessar?\n1-Detalhado\n2-Simples\n";
@@ -65,7 +79,12 @@ int main() {
 			}
 			break;
 		case 4:
-			cout << "\nFechando o menu\n";
+			cout << "\nOPCAO 4\nDigite o numero do quarto que deseja checar: ";
+			cin >> id;
+			Func1.Disponibilidade(id);
+			break;
+		case 5:
+			cout << "Fechando Menu";
 			break;
 		default:
 			cout << "Opcao invalida";
